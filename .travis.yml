@@ -1,0 +1,23 @@
+language: php
+php:
+    - "5.3"
+    - "5.4"
+    - "5.5"
+
+env:
+    global:
+        # environment variables with smtp settings
+        - secure: "IRgnFoGIALx8oOx5XrdGzqjUJqnYmwntuCbZtBZu8zkCdzjx0fIog2o6iDqH\nrNUHuZqYR2PvJhAU0zIpbLgbduOngxtUa7RH5eyUE8gt4pT1Fn/4udkaXBM0\nj2zQy482oudrLZngYWrskDveif3oPOq+pQyc45ZVYHng1MFGDh4="
+        - secure: "WOgHW4C9f9cZ0hJUYWEbEZTSZfxAM2GguZj5nKGHnoEZkhoplrYrWJ/Urb89\niTTk/Yiqc0jwJh7U0/+lnOKYA9uOBhVETSJ6XQwsVUGmZvM7hgy4GySTBWfJ\nqfzvkduds0pr48YGl+m3Fd2YCYu6VI7CJKGzugpA7Ttvo/VfrDc="
+        - secure: "RLRB+uJnqIPHwZ5OJ3d7Hgz84/tM+VxnXXy4+zanpVSnq4M8VLuMjl4Hv/i4\ncDFjBE29rCW9L3JW7Zs0YbGYm/GwcoHZ8dGgFPcUrMa+19iVeLRMNW8y2YJz\nu5du5FDwQG+71+2oKddmkplRMkBrQGziRDkybOZrIdzVvvFOfvw="
+        - secure: "PJ3trzKOahJeQLUzRyzLumB2U8o7Psg+r8SrIMNSzX8QS3ekGQ8rZZ2dmFPZ\ntUQti++cmR1QyuZF4oDS1EtwvEocU30FI7mLCpGMl66Cfuy92m6HhxCDlKHH\n8Nn4Xjoxx/SwkGlnhEhgwmwRJNK6XxfRBx9e31SV4NLSQGBMtvI="
+        # environment variables with imap settings
+        - secure: "WnEUakBCRpgGUI+F9OV3ySGcPXwyz1gErNsheXfJEQQRozsZHur0HEgZgYZ+\n7+jf+NP2X/w8JLWDF4sn/8y6NOCWe1S6kAEYl5pnvegoZqcbxB0CtO6T3cwx\nR4uk6DazB0Ra9pBlbmCNQK5rS7tCbk7My5XOIiYtB+GTSgH0Zbw="
+        - secure: "XzqSgN3lAOBLbo1ZhjBhfKl18K7KCSeiyDJEC7kXO4OLU/JckjInzc5K33E2\n9yGOIXLD5TmghsocZduzadnoqULKAjgkMKAntXUcr3yQA9dWztw59JPkg2Ig\nIIkQEey1iOlYO2ubG5T7RfiKJoOTUUyOW/4BZ1Ru528hFtsJdoc="
+        - secure: "gjScAUjLeW2WRQmbKSd7aHzB8uO6zJjV8Lfni2m8HlQcgdUVWQYCyZQB3E1O\n8UvCP+LvqusdMy1kKHAL3bApg+eJsFMzC3xrCxfsFDf0XlfUaPUFH+u2inxG\nyt7evdvgRDd14Df6XPn/Gg3gLcbl0vmXeTzvusG0/5cslbxeNz4="
+        - secure: "LtcKEnAQGuPBDJa7tKBFUtr1NpIVWea1bibDD0SYpe6h4sjAcMmukqLKSTTx\nkEBn27P8UfeeoxCVTn6BuP5J+voRqBDb+foupuELMAVqtaYedpfxjd4FBM2V\nFWpfLIARSP6ZXmE/YTYfH2P3oOC2q0ed2oGoEhsZtASWybhEpdk="
+        - secure: "o8XICPK5iViTeQUzLXvJr6Q2wO/I1d0eNIwqlSwQFkKLMZwXNB79t538H2Fl\nMY5QIURndSbeccm1PtW8tU5XZHMXryEGUhNXbArewpv80vh3HEfvItRk9CDK\nwzPzmYqB97N4rkuui8Nw0D6/BysYBkeV8gy1qE5costG2GjJh98="
+
+install:
+    - composer install --prefer-dist --dev
+script: ant -keep-going
