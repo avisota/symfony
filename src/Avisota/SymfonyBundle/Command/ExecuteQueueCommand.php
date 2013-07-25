@@ -84,14 +84,14 @@ EOF
 			$failed = 0;
 			foreach ($statuses as $status) {
 				$successful += $status->getSuccessfullySend();
-				$failed += $status->getFailedRecipients();
+				$failed += count($status->getFailedRecipients());
 				$tableData[] = array(
 					$status->getMessage()->getSubject(),
 					$status->getSuccessfullySend(),
 					count($status->getFailedRecipients())
 				);
 			}
-			$tableData[] = array('', $successful, $failed);
+			$tableData[] = array('Total:', $successful, $failed);
 
 			/** @var TableHelper $table */
 			$table = $this->getApplication()->getHelperSet()->get('table');
