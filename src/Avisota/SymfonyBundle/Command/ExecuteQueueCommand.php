@@ -91,13 +91,34 @@ EOF
 					count($status->getFailedRecipients())
 				);
 			}
-			$tableData[] = array('Total:', $successful, $failed);
 
-			/** @var TableHelper $table */
-			$table = $this->getApplication()->getHelperSet()->get('table');
-			$table->setHeaders(array('Message', 'Successful', 'Failed'));
-			$table->setRows($tableData);
-			$table->render($output);
+			if ($output->getVerbosity() >= OutputInterface::VERBOSITY_VERBOSE) {
+				$tableData[] = array();
+				$tableData[] = array('Total:', $successful, $failed);
+
+				/** @var TableHelper $table */
+				$table = $this->getApplication()->getHelperSet()->get('table');
+				$table->setHeaders(array('Message', 'Successful', 'Failed'));
+				$table->setRows($tableData);
+				$table->render($output);
+			}
+			else if ($failed) {
+				$output->writeln(
+					sprintf(
+						'spooled %d emails, %d failed',
+						$successful,
+						$failed
+					)
+				);
+			}
+			else {
+				$output->writeln(
+					sprintf(
+						'spooled %d emails',
+						$successful
+					)
+				);
+			}
 		}
 	}
 }
